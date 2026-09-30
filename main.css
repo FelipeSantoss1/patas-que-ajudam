@@ -1,0 +1,362 @@
+
+
+/* =========================
+   DESIGN SYSTEM
+   ========================= */
+
+:root {
+    /* 8 CORES */
+    --cor-primaria: #2E7D32;
+    --cor-primaria-clara: #66BB6A;
+    --cor-secundaria: #FF9800;
+    --cor-secundaria-clara: #FFB74D;
+    --cor-fundo: #FFFFFF;
+    --cor-fundo-claro: #F5F5F5;
+    --cor-texto: #212121;
+    --cor-texto-secundario: #616161;
+
+    /* 5 TAMANHOS DE TEXTO */
+    --fonte-1: 2rem;
+    --fonte-2: 1.75rem;
+    --fonte-3: 1.5rem;
+    --fonte-4: 1rem;
+    --fonte-5: 0.875rem;
+
+    /* ESPAÇAMENTOS - ESCALA DE 8px */
+    --espaco-1: 8px;
+    --espaco-2: 16px;
+    --espaco-3: 24px;
+    --espaco-4: 32px;
+    --espaco-5: 40px;
+}
+
+
+/* =========================
+   CONFIGURAÇÃO GERAL
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+
+/* =========================
+   CABEÇALHO - FLEXBOX
+   ========================= */
+
+header {
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+    text-align: center;
+    padding: var(--espaco-5);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header h1 {
+    margin: 0 0 var(--espaco-1);
+    font-size: var(--fonte-1);
+}
+
+header p {
+    margin: 0;
+    font-size: var(--fonte-4);
+}
+
+
+/* =========================
+   MENU - FLEXBOX
+   ========================= */
+
+nav {
+    background-color: var(--cor-primaria-clara);
+    padding: var(--espaco-2);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--espaco-2);
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--cor-fundo);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: var(--cor-fundo);
+}
+
+
+/* =========================
+   CONTEÚDO PRINCIPAL - GRID
+   ========================= */
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--espaco-5);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espaco-4);
+}
+
+section {
+    background-color: var(--cor-fundo);
+    padding: var(--espaco-4);
+    border-radius: 8px;
+}
+
+
+/* =========================
+   TÍTULOS E TEXTOS
+   ========================= */
+
+h2 {
+    color: var(--cor-primaria);
+    font-size: var(--fonte-2);
+    margin-top: 0;
+}
+
+h3 {
+    color: var(--cor-secundaria);
+    font-size: var(--fonte-3);
+}
+
+p {
+    font-size: var(--fonte-4);
+}
+
+section p {
+    color: var(--cor-texto-secundario);
+}
+
+
+/* =========================
+   IMAGEM
+   ========================= */
+
+img {
+    display: block;
+    width: 500px;
+    max-width: 100%;
+    height: auto;
+    margin: var(--espaco-3) auto;
+    border-radius: 8px;
+}
+
+
+/* =========================
+   FORMULÁRIOS
+   ========================= */
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: var(--espaco-1);
+    border: 1px solid var(--cor-texto-secundario);
+    border-radius: 5px;
+}
+
+
+/* ESTADO DE FOCO */
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid var(--cor-secundaria-clara);
+    border-color: var(--cor-primaria);
+}
+
+
+/* ESTADO DE ERRO */
+
+.erro {
+    border: 2px solid #D32F2F;
+    background-color: #FFEBEE;
+}
+
+
+/* ESTADO DE SUCESSO */
+
+.sucesso {
+    border: 2px solid var(--cor-primaria);
+    background-color: #E8F5E9;
+}
+
+
+/* =========================
+   BOTÃO
+   ========================= */
+
+button {
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: var(--cor-primaria-clara);
+}
+
+button:focus {
+    outline: 3px solid var(--cor-secundaria-clara);
+    outline-offset: 2px;
+}
+
+
+/* =========================
+   BADGES
+   ========================= */
+
+.badge {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin: 5px;
+}
+
+
+/* =========================
+   ALERTA
+   ========================= */
+
+.alerta {
+    background-color: var(--cor-secundaria-clara);
+    border: 1px solid var(--cor-secundaria);
+    padding: var(--espaco-2);
+    margin: var(--espaco-3) 0;
+    border-radius: 5px;
+}
+
+
+/* =========================
+   TOAST
+   ========================= */
+
+#toast {
+    display: none;
+    position: fixed;
+    bottom: var(--espaco-2);
+    right: var(--espaco-2);
+    background-color: var(--cor-texto);
+    color: var(--cor-fundo);
+    padding: var(--espaco-2);
+    border-radius: 5px;
+}
+
+
+/* =========================
+   RODAPÉ
+   ========================= */
+
+footer {
+    background-color: var(--cor-texto);
+    color: var(--cor-fundo);
+    text-align: center;
+    padding: var(--espaco-3);
+}
+
+footer p {
+    margin: 0;
+    font-size: var(--fonte-5);
+}
+
+
+/* =========================
+   BREAKPOINTS
+   ========================= */
+
+/* 1200px - telas grandes */
+@media (max-width: 1200px) {
+    main {
+        max-width: 900px;
+    }
+}
+
+
+/* 992px - notebooks e tablets */
+@media (max-width: 992px) {
+    main {
+        max-width: 800px;
+    }
+}
+
+
+/* 768px - tablets */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* 600px - celulares */
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: var(--fonte-2);
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        display: block;
+        margin: var(--espaco-1);
+    }
+
+    main {
+        padding: var(--espaco-2);
+    }
+
+    section {
+        padding: var(--espaco-3);
+    }
+}
+
+
+/* 480px - celulares pequenos */
+@media (max-width: 480px) {
+
+    header {
+        padding: var(--espaco-3);
+    }
+
+    main {
+        padding: var(--espaco-1);
+    }
+
+    section {
+        padding: var(--espaco-2);
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
